@@ -144,15 +144,15 @@
         },
         {
             "id": 4,
-            "nom": "Emma",
-            "prenom": "Smith",
+            "nom": "Elmir",
+            "prenom": "Adnane",
             "age": 23,
             "sexe": "femme",
             "pays": "maroc",
             "nbreAbsence": 2,
             "filiere": "developement digital",
             "groupe": "Design402",
-            "email": "emma@gmail.com",
+            "email": "Adnane@gmail.com",
             "absences": [
                 {
                     "ida": 3,
@@ -235,15 +235,15 @@
         },
         {
             "id": 9,
-            "nom": "Mohamed",
-            "prenom": "Ibrahim",
+            "nom": "Amine",
+            "prenom": "tahri",
             "age": 23,
             "sexe": "homme",
             "pays": "maroc",
             "nbreAbsence": 3,
             "filiere": "developement digital",
             "groupe": "GC301",
-            "email": "mohamed@gmail.com",
+            "email": "amine@gmail.com",
             "absences": [
                 {
                     "ida": 5,

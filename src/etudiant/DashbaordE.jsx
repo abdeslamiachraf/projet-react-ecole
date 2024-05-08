@@ -24,7 +24,13 @@ export default function DashbaordE() {
     <div class="top h-64 w-full bg-blue-600 overflow-hidden relative" >
       <img src="https://images.unsplash.com/photo-1503264116251-35a269479413?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80" alt="" class="bg w-full h-full object-cover object-center absolute z-0"/>
       <div class="flex flex-col justify-center items-center relative h-full bg-black bg-opacity-50 text-white">
-        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80" class="h-24 w-24 object-cover rounded-full"/>
+         {
+          sexe=="femme"?
+          <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80" class="h-24 w-24 object-cover rounded-full"/>
+          :
+          <img src="../../../../../../homme.jpeg" class="h-24 w-24 object-cover rounded-full"/>
+          
+         }
         <h1 class="text-2xl font-semibold"> {nom} {prenom}  </h1>
         <h4 class="text-sm font-semibold">{filiere}</h4>
       </div>
@@ -52,27 +58,27 @@ export default function DashbaordE() {
   
             <div class="form-item">
               <label class="text-xl ">Full Name</label>
-              <input type="text" value={`${nom} ${prenom}`} class="w-full appearance-none text-black text-opacity-50 rounded shadow py-1 px-2  mr-2 focus:outline-none focus:shadow-outline focus:border-blue-200" disabled/>
+              <input type="text" value={`${nom} ${prenom}`} class="w-full appearance-none text-cyan-500 text-opacity-50 rounded shadow py-1 px-2  mr-2 focus:outline-none focus:shadow-outline focus:border-blue-200" disabled/>
             </div>
   
             <div class="flex flex-col space-y-4 md:space-y-0 md:flex-row md:space-x-4">
   
               <div class="form-item w-full">
                 <label class="text-xl ">Username</label>
-                <input type="text" value={nom} class="w-full appearance-none text-black  rounded shadow py-1 px-2 mr-2 focus:outline-none focus:shadow-outline focus:border-blue-200 text-opacity-25 " disabled/>
+                <input type="text" value={nom} class="w-full appearance-none text-cyan-500  rounded shadow py-1 px-2 mr-2 focus:outline-none focus:shadow-outline focus:border-blue-200  " disabled/>
               </div>
   
               <div class="form-item w-full">
                 <label class="text-xl ">Email</label>
-                <input type="text" value={email} class="w-full appearance-none text-black  rounded shadow py-1 px-2 mr-2 focus:outline-none focus:shadow-outline focus:border-blue-200 text-opacity-25 " disabled/>
+                <input type="text" value={email} class="w-full appearance-none text-cyan-500  rounded shadow py-1 px-2 mr-2 focus:outline-none focus:shadow-outline focus:border-blue-200  " disabled/>
               </div>
               <div class="form-item w-full">
                 <label class="text-xl ">Pays</label>
-                <input type="text" value={pays} class="w-full appearance-none text-black  rounded shadow py-1 px-2 mr-2 focus:outline-none focus:shadow-outline focus:border-blue-200 text-opacity-25 " disabled/>
+                <input type="text" value={pays} class="w-full appearance-none text-cyan-500  rounded shadow py-1 px-2 mr-2 focus:outline-none focus:shadow-outline focus:border-blue-200  " disabled/>
               </div>
               <div class="form-item w-full">
                 <label class="text-xl ">Sexe</label>
-                <input type="text" value={sexe} class="w-full appearance-none text-black  rounded shadow py-1 px-2 mr-2 focus:outline-none focus:shadow-outline focus:border-blue-200 text-opacity-25 " disabled/>
+                <input type="text" value={sexe} class="w-full appearance-none text-cyan-500  rounded shadow py-1 px-2 mr-2 focus:outline-none focus:shadow-outline focus:border-blue-200  " disabled/>
               </div>
             </div>
   
@@ -87,7 +93,7 @@ export default function DashbaordE() {
                 absences?
               
                     <table
-                        class="w-full border-2 text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400 "
+                        class="w-full border-2 text-sm text-left rtl:text-right text-blue-600 dark:houda "
                     >
                         <thead>
                             <tr className='broder-2'>
