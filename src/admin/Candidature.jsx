@@ -93,9 +93,9 @@ export default function Candidature() {
             </a>
 
             <a
-              href="#"
-              class="flex items-center px-4 py-2 mt-2 text-gray-100 hover:bg-gray-700"
-            >
+                href="/admin/rapport"
+                class="flex items-center px-4 py-2 mt-2 text-gray-100 hover:bg-gray-700"
+              >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 class="h-6 w-6 mr-2"
@@ -110,7 +110,7 @@ export default function Candidature() {
                   d="M13 10V3L4 14h7v7l9-11h-7z"
                 />
               </svg>
-              paramétre
+              Rapport
             </a>
                 
                 

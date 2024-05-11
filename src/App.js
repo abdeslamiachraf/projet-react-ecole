@@ -6,6 +6,8 @@ import DashbaordE from "./etudiant/DashbaordE";
 import Filiere from "./admin/Filiere";
 import Absence from "./admin/Absence";
 import Candidature from "./admin/Candidature";
+import RapportProf from "./prof/RapportProf";
+import RapportA from "./admin/RapportA";
 
 
 function App() {
@@ -18,12 +20,16 @@ function App() {
     <Route path='/admin/Filiere' element={<Filiere />} />
     <Route path='/admin/Absence' element={<Absence />} />
     <Route path='/admin/Candidature' element={<Candidature />} />
+    <Route path='/admin/rapport' element={<RapportA />} />
+
 
 
 
 
     {/* prof */}
     <Route path='/prof/dashboard' element={<DashbaordP />} />
+    <Route path='/prof/dashboard/message' element={<RapportProf />} />
+
     {/* etudiant */}
     <Route path='/etudiant/dashboard/:id' element={<DashbaordE />} />
 

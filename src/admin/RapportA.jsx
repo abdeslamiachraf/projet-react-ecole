@@ -1,19 +1,21 @@
 import { useEffect, useState } from "react";
 
 
-function Dashboarde() {
+function RapportA() {
     const [utilisateur,setUtilisateur]=useState([])
     const [candidature,setCandidature]=useState([])
+    const [rapport,setRapport]=useState([])
     useEffect(()=>{
         fetch('http://localhost:3001/utilisateur').
         then(res=>res.json())
         .then(res=>setUtilisateur(res))
     },[])
     useEffect(()=>{
-        fetch('http://localhost:3001/candidature').
+        fetch('http://localhost:3001/rapport').
         then(res=>res.json())
-        .then(res=>setCandidature(res))
+        .then(res=>setRapport(res))
     },[])
+
     return (
       <div class="flex h-screen bg-gray-100">
   
@@ -149,115 +151,74 @@ function Dashboarde() {
               </div>
           </div>
           <div class="p-4">
-              <h1 class="text-2xl font-bold">Welcome </h1>
-              <div class="grid grid-cols-1 gap-4 px-4 mt-8 sm:grid-cols-4 sm:px-8">
-    <div class="flex items-center bg-white border rounded-sm overflow-hidden shadow">
-        <div class="p-4 bg-green-400"><svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-white" fill="none"
-                viewBox="0 0 24 24" stroke="currentColor">
+              <h1 class="text-2xl font-bold">Welcome Page Rapport </h1>
+              <div class="grid gap-8 md:grid-cols-2 lg:gap-12 p-6 md:p-10 mt-12">
+    <a href="#"
+        class="flex flex-col p-6 space-y-6 transition-all duration-500 bg-white border border-indigo-100 rounded-lg shadow hover:shadow-xl lg:p-8 lg:flex-row lg:space-y-0 lg:space-x-6">
+        <div
+            class="flex items-center justify-center w-16 h-16 bg-green-100 border border-green-200 rounded-full shadow-inner lg:h-20 lg:w-20">
+            <svg class="w-10 h-10 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                    d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z">
+                    d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z">
                 </path>
-            </svg></div>
-        <div class="px-4 text-gray-700">
-            <h3 class="text-sm tracking-wider">Total Users</h3>
-            <p class="text-3xl">{utilisateur.length}</p>
+            </svg>
         </div>
-    </div>
-    <div class="flex items-center bg-white border rounded-sm overflow-hidden shadow">
-        <div class="p-4 bg-blue-400"><svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-white" fill="none"
-                viewBox="0 0 24 24" stroke="currentColor">
+        <div class="flex-1">
+            <h5 class="mb-3 text-xl font-bold lg:text-2xl">Rapport plant</h5>
+            <p class="mb-6 text-lg text-gray-600"></p>
+            <span class="flex items-baseline text-lg font-bold text-indigo-600">
+            voir plus
+              <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+            </span>
+        </div>
+    </a>
+    <a href="#"
+        class="flex flex-col p-6 space-y-6 transition-all duration-500 bg-white border border-indigo-100 rounded-lg shadow hover:shadow-xl lg:p-8 lg:flex-row lg:space-y-0 lg:space-x-6">
+        <div
+            class="flex items-center justify-center w-16 h-16 bg-green-100 border border-green-200 rounded-full shadow-inner lg:h-20 lg:w-20">
+            <svg class="w-10 h-10 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                    d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2">
+                    d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z">
                 </path>
-            </svg></div>
-        <div class="px-4 text-gray-700">
-            <h3 class="text-sm tracking-wider">Total Absence</h3>
-            <p class="text-3xl">39</p>
+            </svg>
         </div>
-    </div>
-    <div class="flex items-center bg-white border rounded-sm overflow-hidden shadow">
-        <div class="p-4 bg-indigo-400"><svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-white" fill="none"
-                viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                    d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z">
-                </path>
-            </svg></div>
-        <div class="px-4 text-gray-700">
-            <h3 class="text-sm tracking-wider">Total Candidature</h3>
-            <p class="text-3xl">{candidature.length}</p>
+        <div class="flex-1">
+            <h5 class="mb-3 text-xl font-bold lg:text-2xl">Message</h5>
+            <span class="flex items-baseline text-lg font-bold text-indigo-600">
+              voir plus
+              <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+            </span>
         </div>
-    </div>
-    <div class="flex items-center bg-white border rounded-sm overflow-hidden shadow">
-        <div class="p-4 bg-red-400"><svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-white" fill="none"
-                viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                    d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4">
-                </path>
-            </svg></div>
-        <div class="px-4 text-gray-700">
-            <h3 class="text-sm tracking-wider">Nombre Filiere</h3>
-            <p class="text-3xl">4</p>
-        </div>
-    </div>
+    </a>
 </div>
-              <h1>table de Utilisateur</h1>
              
-<div  class="w-full">
-	<div class="col-12">
-		<div class="overflow-auto lg:overflow-visible ">
-			<table class=" w-full table text-gray-400 border-separate space-y-6 text-sm">
-				<thead class="bg-gray-800 text-gray-500">
-					<tr>
-						<th class="p-3">ID</th>
-						<th class="p-3 text-left">Username</th>
-						<th class="p-3 text-left">Role</th>
-						<th class="p-3 text-left">Status</th>
-						<th class="p-3 text-left">Action</th>
-					</tr>
-				</thead>
-				<tbody>
-					{
-                        utilisateur.map((user,indec)=>{
-                            return <tr class="bg-gray-800">
-                            <td class="p-3">
-                                <div class="flex align-items-center">
-                                    <img class="rounded-full h-12 w-12  object-cover" src="https://images.unsplash.com/photo-1613588718956-c2e80305bf61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=634&q=80" alt="unsplash image"/>
-                                    <div class="ml-3">
-                                        <div class="text-gray-500">{user.id}</div>
-                                    </div>
-                                </div>
-                            </td>
-                            <td class="p-3">
-                            {user.username}
-                            </td>
-                            <td class="p-3 font-bold">
-                            {user.role}
-                            </td>
-                            <td class="p-3">
-                                <span class="bg-green-400 text-gray-50 rounded-md px-2">connect</span>
-                            </td>
-                            <td class="p-3 ">
-                                <a href="#" class="text-gray-400 hover:text-gray-100 mr-2">
-                                    <i class="material-icons-outlined text-base">visibility</i>
-                                </a>
-                                <a href="#" class="text-gray-400 hover:text-gray-100  mx-2">
-                                    <i class="material-icons-outlined text-base">edit</i>
-                                </a>
-                                <a href="#" class="text-gray-400 hover:text-gray-100  ml-2">
-                                    <i class="material-icons-round text-base">delete_outline</i>
-                                </a>
-                            </td>
-                        </tr>
-                        })
-                    }
-					
-				</tbody>
-			</table>
-		</div>
-	</div>
+<div className="flex gap-10  col ">
+{
+    rapport.map((v,k)=>{
+        return <section key={k} class="mb-2 border bg-blue-100 p-4 rounded-lg max-w-full ">
+        <div class="mx-auto">
+            <div class="card md:flex max-w-lg">
+                <div class="w-20 h-20 mx-auto mb-6 md:mr-6 flex-shrink-0">
+                    <img class="object-cover rounded-full" src="https://tailwindflex.com/public/images/user.png" />
+                </div>
+                <div class="flex-grow text-center md:text-left">
+                    <p class="font-bold">{v.username}</p>
+                    <h3 class="text-xl heading">{v.subject}</h3>
+                    <p class="mt-2 mb-3">{v.message}</p>
+                    <div>
+                        <span class="bg-gray-200 border px-3 py-1.5 rounded-lg text-sm"> {v.date_envoy} </span>
+                        <span class="bg-gray-200 border px-3 py-1.5 rounded-lg text-sm">{v.username}</span> 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    })
+}
 </div>
-
-              
+        
           </div>
       </div>
       
@@ -265,5 +226,5 @@ function Dashboarde() {
     );
   }
   
-  export default Dashboarde;
+  export default RapportA;
   
