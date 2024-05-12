@@ -8,6 +8,7 @@ import Absence from "./admin/Absence";
 import Candidature from "./admin/Candidature";
 import RapportProf from "./prof/RapportProf";
 import RapportA from "./admin/RapportA";
+import AjouterCandidature from "./admin/GrudCandidature/AjouterCandidature";
 
 
 function App() {
@@ -21,6 +22,8 @@ function App() {
     <Route path='/admin/Absence' element={<Absence />} />
     <Route path='/admin/Candidature' element={<Candidature />} />
     <Route path='/admin/rapport' element={<RapportA />} />
+    <Route path='/admin/Candidature/ajouter' element={<AjouterCandidature />} />
+
 
 
 

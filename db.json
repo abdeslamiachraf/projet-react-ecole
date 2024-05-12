@@ -1,87 +1,93 @@
 {
   "utilisateur": [
     {
-      "id": 1,
+      "id": "1",
       "username": "admin",
       "password": "admin",
       "role": "admin"
     },
     {
-      "id": 2,
+      "id": "2",
       "username": "prof",
       "password": "prof",
       "role": "prof"
     },
     {
-      "id": 3,
+      "id": "3",
       "username": "achraf",
       "password": "achraf",
       "role": "etudiant"
     },
     {
-      "id": 4,
+      "id": "4",
       "username": "adnane",
       "password": "elmir",
       "role": "etudiant"
     },
     {
-      "id": 5,
+      "id": "5",
       "username": "kaouter",
       "password": "metat",
       "role": "etudiant"
     },
     {
-      "id": 6,
+      "id": "6",
       "username": "assia",
       "password": "sounani",
       "role": "etudiant"
     },
     {
-      "id": 7,
+      "id": "7",
       "username": "marwan",
       "password": "bourchid",
       "role": "etudiant"
     },
     {
-      "id": 8,
+      "id": "8",
       "username": "hamza",
       "password": "chanouf",
       "role": "etudiant"
     },
     {
-      "id": 9,
+      "id": "9",
       "username": "rabbab",
       "password": "metat",
       "role": "etudiant"
     },
     {
-      "id": 10,
+      "id": "10",
       "username": "mastafa",
       "password": "sa7ra",
       "role": "etudiant"
     },
     {
-      "id": 11,
+      "id": "11",
       "username": "amine",
       "password": "amine",
       "role": "etudiant"
     },
     {
-      "id": 12,
+      "id": "12",
       "username": "houda",
       "password": "metat",
       "role": "etudiant"
     },
     {
-      "id": 13,
+      "id": "13",
       "username": "hafid",
       "password": "hafid",
+      "role": "etudiant"
+    },
+    {
+      "id": 51842,
+      "username": "achraf111111",
+      "password": "achraf111111",
       "role": "etudiant"
     }
   ],
   "candidature": [
     {
-      "id": 1,
+      "id": "1",
       "nom": "achraf",
       "prenom": "abdeslami",
       "age": 20,
@@ -101,7 +107,7 @@
       "idu": 3
     },
     {
-      "id": 2,
+      "id": "2",
       "nom": "Sara",
       "prenom": "Lefebvre",
       "age": 22,
@@ -115,7 +121,7 @@
       "idu": 4
     },
     {
-      "id": 3,
+      "id": "3",
       "nom": "Juan",
       "prenom": "Gonzalez",
       "age": 21,
@@ -135,7 +141,7 @@
       "idu": 5
     },
     {
-      "id": 4,
+      "id": "4",
       "nom": "Elmir",
       "prenom": "Adnane",
       "age": 23,
@@ -160,7 +166,7 @@
       "idu": 6
     },
     {
-      "id": 5,
+      "id": "5",
       "nom": "Ahmed",
       "prenom": "Ali",
       "age": 24,
@@ -174,7 +180,7 @@
       "idu": 7
     },
     {
-      "id": 6,
+      "id": "6",
       "nom": "Sophie",
       "prenom": "Dubois",
       "age": 20,
@@ -188,7 +194,7 @@
       "idu": 8
     },
     {
-      "id": 7,
+      "id": "7",
       "nom": "Luca",
       "prenom": "Rossi",
       "age": 22,
@@ -202,7 +208,7 @@
       "idu": 9
     },
     {
-      "id": 8,
+      "id": "8",
       "nom": "Lea",
       "prenom": "Martinez",
       "age": 21,
@@ -216,7 +222,7 @@
       "idu": 10
     },
     {
-      "id": 9,
+      "id": "9",
       "nom": "Amine",
       "prenom": "tahri",
       "age": 23,
@@ -246,7 +252,7 @@
       "idu": 11
     },
     {
-      "id": 10,
+      "id": "10",
       "nom": "Camille",
       "prenom": "Petit",
       "age": 20,
@@ -258,40 +264,54 @@
       "email": "camille@gmail.com",
       "absences": [],
       "idu": 12
+    },
+    {
+      "id": "1e13",
+      "nom": "achraf111111",
+      "prenom": "achraf111111",
+      "age": "achraf111111",
+      "sexe": "achraf111111",
+      "email": "achraf111111@gmail.com",
+      "pays": "achraf111111",
+      "filiere": "achraf111111",
+      "groupe": "achraf111111",
+      "absences": [],
+      "nbreAbsence": 0,
+      "idu": 51842
     }
   ],
   "rapport": [
     {
-        "id": 975,
-        "username":"prof",
-        "iduti": 2,
-        "subject": "ee",
-        "message": "e",
-        "date_envoy": 2024
-      },
-      {
-        "id": 98,
-        "username":"prof",
-        "iduti": 2,
-        "subject": "ee",
-        "message": "e",
-        "date_envoy": 2024
-      },
-      {
-        "id": 75,
-        "username":"prof",
-        "iduti": 2,
-        "subject": "ee",
-        "message": "e",
-        "date_envoy": 2024
-      },
-      {
-        "id": 95,
-        "username":"prof",
-        "iduti": 2,
-        "subject": "ee",
-        "message": "e",
-        "date_envoy": 2024
-      }
+      "id": "975",
+      "username": "prof",
+      "iduti": 2,
+      "subject": "ee",
+      "message": "e",
+      "date_envoy": 2024
+    },
+    {
+      "id": "98",
+      "username": "prof",
+      "iduti": 2,
+      "subject": "ee",
+      "message": "e",
+      "date_envoy": 2024
+    },
+    {
+      "id": "75",
+      "username": "prof",
+      "iduti": 2,
+      "subject": "ee",
+      "message": "e",
+      "date_envoy": 2024
+    },
+    {
+      "id": "95",
+      "username": "prof",
+      "iduti": 2,
+      "subject": "ee",
+      "message": "e",
+      "date_envoy": 2024
+    }
   ]
 }

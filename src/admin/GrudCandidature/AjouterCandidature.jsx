@@ -1,13 +1,60 @@
+import { fireEvent } from "@testing-library/react";
 import { useEffect, useState } from "react";
 
 
-export default function Candidature() {
+export default function AjouterCandidature() {
+    const [nom,setNom]=useState('')
+    const [prenom,setPrenom]=useState('')
+    const [sexe,setSexe]=useState('')
+    const [age,setAge]=useState('')
+    const [pays,setPays]=useState('')
+    const [filiere,setFiliere]=useState('')
+    const [groupe,setGroupe]=useState('')
+    const [email,setEmail]=useState('');
+    const [username,setUsername]=useState('');
+    const [password,setPassword]=useState('');
+
+
+
+
+
     const [utilisateur,setUtilisateur]=useState([])
+    const id=Math.floor(Math.random()*100000);
     useEffect(()=>{
         fetch('http://localhost:3001/candidature').
         then(res=>res.json())
         .then(res=>setUtilisateur(res))
     },[])
+    function handleAjouter(e){
+        e.preventDefault();
+        fetch('http://localhost:3001/utilisateur',{
+            method:"POST",
+            body:JSON.stringify(({
+                id:id,
+                username:username,
+                password:password,
+                role:"etudiant"
+            }))
+        })
+        fetch('http://localhost:3001/candidature',{
+            method:"POST",
+            body:JSON.stringify(({
+                nom:nom,
+                prenom:prenom,
+                age:age,
+                sexe:sexe,
+                email:email,
+                pays:pays,
+                filiere:filiere,
+                groupe:groupe,
+                absences:[],
+                nbreAbsence:0,
+            
+                idu:id,
+            }))
+        })
+        alert("candidature bien ajouter")
+    }
   return (
     <div class="flex h-screen bg-gray-100">
   
@@ -144,92 +191,40 @@ export default function Candidature() {
         </div>
         <div class="p-4">
             <h1 class="text-2xl font-bold">Welcome </h1>
-            <h1>table de Candidature</h1>
-            <button className="border-2 bg-green-600 py-2 px-4 text-white rounded-xl"> 
-            <a href="/admin/Candidature/ajouter" className="decoration-none">Ajouter Candidature</a>
-            </button>
-           
-<div  class="w-full">
-  <div class="col-12">
-      <div class="overflow-auto lg:overflow-visible ">
-          <table class=" w-full table text-gray-400 border-separate space-y-6 text-sm">
-              <thead class="bg-gray-800 text-gray-500">
-                  <tr>
-                      <th class="p-3">ID</th>
-                      <th class="p-3 text-left">Nom & Prenom</th>
-                      <th class="p-3 text-left">Sexe</th>
-                      <th class="p-3 text-left">Age</th>
-                      <th class="p-3 text-left">Email</th>
-
-                      <th class="p-3 text-left">Pays</th>
-                      <th class="p-3 text-left">Groupe</th>
-                      <th class="p-3 text-left">Filiere</th>
-                      <th class="p-3 text-left">Status</th>
-
-                    
-
-
-                      
-
-                      <th class="p-3 text-left">Action</th>
-                  </tr>
-              </thead>
-              <tbody>
-                  {
-                      utilisateur.map((user,indec)=>{
-                          return <tr class="bg-gray-800">
-                          <td class="p-3">
-                              <div class="flex align-items-center">
-                                  <img class="rounded-full h-12 w-12  object-cover" src="https://images.unsplash.com/photo-1613588718956-c2e80305bf61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=634&q=80" alt="unsplash image"/>
-                                  <div class="ml-3">
-                                      <div class="text-gray-500">{user.id}</div>
-                                  </div>
-                              </div>
-                          </td>
-                          <td class="p-3">
-                          {user.nom}     {user.prenom} 
-                          </td>
-                          <td class="p-3 font-bold">
-                          {user.sexe}
-                          </td>
-                          <td class="p-3 font-bold">
-                          {user.age}
-                          </td>
-                          <td class="p-3 font-bold">
-                          {user.email}
-                          </td>
-                          <td class="p-3 font-bold">
-                          {user.pays}
-                          </td>
-                          <td class="p-3 font-bold">
-                          {user.groupe}
-                          </td>
-                          <td class="p-3 font-bold">
-                          {user.filiere}
-                          </td>
-                          <td class="p-3">
-                              <span class="bg-green-400 text-gray-50 rounded-md px-2">connect</span>
-                          </td>
-                          <td class="p-3 ">
-                              <a href="#" class="text-gray-400 hover:text-gray-100 mr-2">
-                                  <i class="material-icons-outlined text-base">visibility</i>
-                              </a>
-                              <a href="#" class="text-gray-400 hover:text-gray-100  mx-2">
-                                  <i class="material-icons-outlined text-base">edit</i>
-                              </a>
-                              <a href="#" class="text-gray-400 hover:text-gray-100  ml-2">
-                                  <i class="material-icons-round text-base">delete_outline</i>
-                              </a>
-                          </td>
-                      </tr>
-                      })
-                  }
-                  
-              </tbody>
-          </table>
-      </div>
+            <div class="mx-14 mt-10 border-2 border-blue-400 rounded-lg">
+  <div class="mt-10 text-center font-bold">Formulaire Candidature</div>
+  <div class="mt-3 text-center text-4xl font-bold">Ajouter Candidature</div>
+  <div class="p-8">
+    <form onSubmit={handleAjouter}>
+    <div class="flex gap-4">
+      <input type="text" value={nom} onChange={(e)=>setNom(e.target.value)}  class="mt-1 block w-1/2 rounded-md border border-slate-300 bg-white px-3 py-4 placeholder-slate-400 shadow-sm placeholder:font-semibold placeholder:text-gray-500 focus:border-sky-500 focus:outline-none focus:ring-1 focus:ring-sky-500 sm:text-sm" placeholder="nom *" required />
+      <input type="text" value={prenom} onChange={(e)=>setPrenom(e.target.value)}  class="mt-1 block w-1/2 rounded-md border border-slate-300 bg-white px-3 py-4 placeholder-slate-400 shadow-sm placeholder:font-semibold placeholder:text-gray-500 focus:border-sky-500 focus:outline-none focus:ring-1 focus:ring-sky-500 sm:text-sm" placeholder="prenom *" required />
+    </div>
+    <div class="flex gap-4">
+      <input type="text" value={sexe} onChange={(e)=>setSexe(e.target.value)}  class="mt-1 block w-1/2 rounded-md border border-slate-300 bg-white px-3 py-4 placeholder-slate-400 shadow-sm placeholder:font-semibold placeholder:text-gray-500 focus:border-sky-500 focus:outline-none focus:ring-1 focus:ring-sky-500 sm:text-sm" placeholder="sexe *" required />
+      <input type="text" value={age} onChange={(e)=>setAge(e.target.value)}  class="mt-1 block w-1/2 rounded-md border border-slate-300 bg-white px-3 py-4 placeholder-slate-400 shadow-sm placeholder:font-semibold placeholder:text-gray-500 focus:border-sky-500 focus:outline-none focus:ring-1 focus:ring-sky-500 sm:text-sm" placeholder="age *" required />
+    </div>
+    <div class="flex gap-4">
+      <input type="text" value={pays} onChange={(e)=>setPays(e.target.value)}  class="mt-1 block w-1/2 rounded-md border border-slate-300 bg-white px-3 py-4 placeholder-slate-400 shadow-sm placeholder:font-semibold placeholder:text-gray-500 focus:border-sky-500 focus:outline-none focus:ring-1 focus:ring-sky-500 sm:text-sm" placeholder="pays *" required />
+      <input type="text" value={filiere} onChange={(e)=>setFiliere(e.target.value)}  class="mt-1 block w-1/2 rounded-md border border-slate-300 bg-white px-3 py-4 placeholder-slate-400 shadow-sm placeholder:font-semibold placeholder:text-gray-500 focus:border-sky-500 focus:outline-none focus:ring-1 focus:ring-sky-500 sm:text-sm" placeholder="filiere *" required />
+    </div>
+    <div class="flex gap-4">
+      <input type="text" value={groupe} onChange={(e)=>setGroupe(e.target.value)}  class="mt-1 block w-1/2 rounded-md border border-slate-300 bg-white px-3 py-4 placeholder-slate-400 shadow-sm placeholder:font-semibold placeholder:text-gray-500 focus:border-sky-500 focus:outline-none focus:ring-1 focus:ring-sky-500 sm:text-sm" placeholder="groupe *" required />
+      <input type="text" value={email} onChange={(e)=>setEmail(e.target.value)}  class="mt-1 block w-1/2 rounded-md border border-slate-300 bg-white px-3 py-4 placeholder-slate-400 shadow-sm placeholder:font-semibold placeholder:text-gray-500 focus:border-sky-500 focus:outline-none focus:ring-1 focus:ring-sky-500 sm:text-sm" placeholder="email *" required />
+    </div>
+    <div class="flex gap-4">
+      <input type="text" value={username} onChange={(e)=>setUsername(e.target.value)}  class="mt-1 block w-1/2 rounded-md border border-slate-300 bg-white px-3 py-4 placeholder-slate-400 shadow-sm placeholder:font-semibold placeholder:text-gray-500 focus:border-sky-500 focus:outline-none focus:ring-1 focus:ring-sky-500 sm:text-sm" placeholder="username *" required />
+      <input type="password" value={password} onChange={(e)=>setPassword(e.target.value)}  class="mt-1 block w-1/2 rounded-md border border-slate-300 bg-white px-3 py-4 placeholder-slate-400 shadow-sm placeholder:font-semibold placeholder:text-gray-500 focus:border-sky-500 focus:outline-none focus:ring-1 focus:ring-sky-500 sm:text-sm" placeholder="password *" required />
+    </div>
+    
+    
+    
+    <div class="text-center mt-10">
+      <button type="submit" class="cursor-pointer rounded-lg bg-blue-700 px-8 py-5 text-sm font-semibold text-white">ajouter </button>
+    </div></form>
   </div>
 </div>
+
 
             
         </div>
